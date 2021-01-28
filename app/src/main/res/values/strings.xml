@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Random Numbers Game</string>
+    <string name="hello_stranger_should_we_start_the_game">Hello Stranger. Should we start the game?</string>
+    <string name="yes_begin">Yes, Begin</string>
+    <string name="no_exit">No, Exit</string>
+    <string name="enter_your_name">Enter Your Name</string>
+    <string name="number_guessing_game">NUMBER GUESSING GAME</string>
+    <string name="submit">Submit</string>
+    <string name="hello_stranger_should_we_start_the_guessing_game">Hello Stranger. Should we start the guessing game?</string>
+    <string name="guess_a_number_between_1_and_10">Guess A Number Between 1 and 10</string>
+    <string name="button">Button</string>
+    <string name="your_guess">Your Guess...</string>
+    <string name="guesses_left_0">Guesses Left: 0</string>
+    <string name="guess_a_number_between_1_and_20">Guess a number between 1 and 20</string>
+    <string name="submit_guess">Submit Guess</string>
+    <string name="just_a_randomizer_button">Just A Randomizer Button</string>
+    <string name="_0">0</string>
+    <string name="randomizer">Randomizer</string>
+    <string name="submit_name_to_play">Submit Name To Play</string>
+    <string name="_1">1</string>
+    <string name="guess_history">Guess History</string>
+    <string name="your_guesses">Your Guesses</string>
+    <string name="your_guess_here">Your Guess Here</string>
+</resources>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context=".Guessing_Game">
+
+    <TextView
+        android:id="@+id/LBLGreetings"
+        android:layout_width="369dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="100dp"
+        android:fontFamily="sans-serif-black"
+        android:linksClickable="false"
+        android:text="@string/hello_stranger_should_we_start_the_guessing_game"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/BTNBegin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="30dp"
+        android:width="150dp"
+        android:fontFamily="sans-serif-black"
+        android:onClick="onClick"
+        android:text="@string/yes_begin"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LBLGreetings" />
+
+    <Button
+        android:id="@+id/BTNExit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="44dp"
+        android:width="150dp"
+        android:fontFamily="sans-serif-black"
+        android:onClick="onClick"
+        android:text="@string/no_exit"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LBLGreetings" />
+
+    <TextView
+        android:id="@+id/LBLInstructions"
+        android:layout_width="154dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="60dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/guess_a_number_between_1_and_20"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.081"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BTNBegin" />
+
+    <TextView
+        android:id="@+id/LBLInstructions2"
+        android:layout_width="122dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="60dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/your_guesses"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.958"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BTNExit" />
+
+    <TextView
+        android:id="@+id/LBLGuessHistory"
+        android:layout_width="122dp"
+        android:layout_height="93dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:hint="@string/guess_history"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.958"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LBLInstructions2" />
+
+    <EditText
+        android:id="@+id/TXTEnterNumber"
+        android:layout_width="151dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/your_guess_here"
+        android:inputType="number"
+        android:onClick="onClick"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.081"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LBLInstructions" />
+
+    <Button
+        android:id="@+id/BTNGuess"
+        android:layout_width="92dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="10dp"
+        android:onClick="onClick"
+        android:text="@string/submit_guess"
+        app:layout_constraintBottom_toTopOf="@+id/LBLGuessesLeft"
+        app:layout_constraintEnd_toStartOf="@+id/LBLGuessHistory"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/TXTEnterNumber"
+        app:layout_constraintTop_toBottomOf="@+id/BTNExit"
+        app:layout_constraintVertical_bias="0.794" />
+
+    <TextView
+        android:id="@+id/LBLGuessesLeft"
+        android:layout_width="146dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/guesses_left_0"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/BTNGuess"
+        app:layout_constraintHorizontal_bias="0.724"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TXTEnterNumber"
+        app:layout_constraintVertical_bias="0.009" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

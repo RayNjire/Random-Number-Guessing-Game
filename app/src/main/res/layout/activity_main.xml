@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/BTNSubmit"
+        android:layout_width="187dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="30dp"
+        android:width="150dp"
+        android:fontFamily="sans-serif-black"
+        android:onClick="onClickBTNSubmit"
+        android:text="@string/submit_name_to_play"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/TXTUserName"
+        app:layout_constraintStart_toStartOf="@+id/TXTUserName"
+        app:layout_constraintTop_toBottomOf="@+id/TXTUserName" />
+
+    <Button
+        android:id="@+id/BTNRandomizer"
+        android:layout_width="172dp"
+        android:layout_height="55dp"
+        android:width="150dp"
+        android:fontFamily="sans-serif-black"
+        android:onClick="onClickBTNRandomizer"
+        android:text="@string/randomizer"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.652"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LBLInstruct"
+        app:layout_constraintVertical_bias="0.184" />
+
+    <EditText
+        android:id="@+id/TXTUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:width="300dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:fontFamily="sans-serif-black"
+        android:hint="@string/enter_your_name"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:layout_marginBottom="50dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="@string/number_guessing_game"
+        android:textColor="@color/design_default_color_secondary"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/TXTUserName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/LBLRandom"
+        android:layout_width="69dp"
+        android:layout_height="52dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="@string/_1"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/BTNRandomizer"
+        app:layout_constraintHorizontal_bias="0.632"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LBLInstruct"
+        app:layout_constraintVertical_bias="0.198" />
+
+    <TextView
+        android:id="@+id/LBLInstruct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="@string/just_a_randomizer_button"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BTNSubmit" />
+</androidx.constraintlayout.widget.ConstraintLayout>
