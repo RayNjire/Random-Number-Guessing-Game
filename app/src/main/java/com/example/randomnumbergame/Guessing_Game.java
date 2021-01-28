@@ -68,7 +68,11 @@ public class Guessing_Game extends AppCompatActivity implements View.OnClickList
 
         catch (Exception e)
         {
-        
+            new AlertDialog.Builder(this)
+                    .setTitle("Error")
+                    .setMessage("On Create Method Error\n" + e.getMessage())
+                    .setIcon(android.R.drawable.ic_dialog_alert);
+    
         }
     }
     
@@ -183,17 +187,15 @@ public class Guessing_Game extends AppCompatActivity implements View.OnClickList
                         
                     }
                 break;
-        
-                default:
-                break;
+            
             }
         }
 
         catch (Exception e)
         {
             new AlertDialog.Builder(this)
-                    .setTitle("Delete entry")
-                    .setMessage("Are you sure you want to delete this entry?")
+                    .setTitle("Click Error")
+                    .setMessage(objClicked.getId() + " Click Error\n" + e.getMessage())
                     .setIcon(android.R.drawable.ic_dialog_alert);
     
         }
