@@ -1,8 +1,5 @@
 package com.example.randomnumbergame;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -15,7 +12,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Random;
 
@@ -37,15 +35,15 @@ public class Guessing_Game extends AppCompatActivity implements View.OnClickList
             mediaPlayer.setLooping(true);
             mediaPlayer.start();
             
-            TextView lblGreetings = (TextView) findViewById(R.id.LBLGreetings);
-            Button btnBegin = (Button) findViewById(R.id.BTNBegin);
-            Button btnExit = (Button) findViewById(R.id.BTNExit);
-            TextView lblInstructions = (TextView) findViewById(R.id.LBLInstructions);
-            TextView lblInstructions2 = (TextView) findViewById(R.id.LBLInstructions2);
-            TextView txtEnterNumber = (TextView) findViewById(R.id.TXTEnterNumber);
-            TextView lblGuessHistory = (TextView) findViewById(R.id.LBLGuessHistory);
-            Button btnGuess = (Button) findViewById(R.id.BTNGuess);
-            TextView lblGuessesLeft = (TextView) findViewById(R.id.LBLGuessesLeft);
+            TextView lblGreetings = findViewById(R.id.LBLGreetings);
+            Button btnBegin = findViewById(R.id.BTNBegin);
+            Button btnExit = findViewById(R.id.BTNExit);
+            TextView lblInstructions = findViewById(R.id.LBLInstructions);
+            TextView lblInstructions2 = findViewById(R.id.LBLInstructions2);
+            TextView txtEnterNumber = findViewById(R.id.TXTEnterNumber);
+            TextView lblGuessHistory = findViewById(R.id.LBLGuessHistory);
+            Button btnGuess = findViewById(R.id.BTNGuess);
+            TextView lblGuessesLeft = findViewById(R.id.LBLGuessesLeft);
             
             Intent intent = getIntent();
             userName = intent.getStringExtra(Intent.EXTRA_TEXT);
@@ -65,14 +63,14 @@ public class Guessing_Game extends AppCompatActivity implements View.OnClickList
             lblGuessesLeft2.setText("Guesses Left: " + guessCounter);
             
         }
-
-        catch (Exception e)
+        
+        catch(Exception e)
         {
             new AlertDialog.Builder(this)
                     .setTitle("Error")
                     .setMessage("On Create Method Error\n" + e.getMessage())
                     .setIcon(android.R.drawable.ic_dialog_alert);
-    
+            
         }
     }
     
@@ -83,17 +81,17 @@ public class Guessing_Game extends AppCompatActivity implements View.OnClickList
         try
         {
             //These Datatypes Changes Every Property of the Objects
-            TextView lblGreetings = (TextView) findViewById(R.id.LBLGreetings);
-            Button btnBegin = (Button) findViewById(R.id.BTNBegin);
-            Button btnExit = (Button) findViewById(R.id.BTNExit);
-            TextView lblInstructions = (TextView) findViewById(R.id.LBLInstructions);
-            TextView lblInstructions2 = (TextView) findViewById(R.id.LBLInstructions2);
-            TextView txtEnterNumber = (TextView) findViewById(R.id.TXTEnterNumber);
-            TextView lblGuessHistory = (TextView) findViewById(R.id.LBLGuessHistory);
-            TextView lblGuessesLeft = (TextView) findViewById(R.id.LBLGuessesLeft);
-            Button btnGuess = (Button) findViewById(R.id.BTNGuess);
+            TextView lblGreetings = findViewById(R.id.LBLGreetings);
+            Button btnBegin = findViewById(R.id.BTNBegin);
+            Button btnExit = findViewById(R.id.BTNExit);
+            TextView lblInstructions = findViewById(R.id.LBLInstructions);
+            TextView lblInstructions2 = findViewById(R.id.LBLInstructions2);
+            TextView txtEnterNumber = findViewById(R.id.TXTEnterNumber);
+            TextView lblGuessHistory = findViewById(R.id.LBLGuessHistory);
+            TextView lblGuessesLeft = findViewById(R.id.LBLGuessesLeft);
+            Button btnGuess = findViewById(R.id.BTNGuess);
             
-            switch (objClicked.getId())
+            switch(objClicked.getId())
             {
                 case R.id.BTNBegin:
                     lblGreetings.setVisibility(View.INVISIBLE);
@@ -115,24 +113,24 @@ public class Guessing_Game extends AppCompatActivity implements View.OnClickList
                     Random randomNumber = new Random();
                     guessThisNumber = randomNumber.nextInt(21 - 1) + 1; //Was only 0-19, so add 1
                     
-                break;
+                    break;
                 
                 case R.id.BTNExit:
                     System.exit(0);
                     
-                break;
+                    break;
                 
                 case R.id.TXTEnterNumber:
                     txtEnterNumber.getBackground().setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP);
                     
-                break;
+                    break;
                 
                 case R.id.BTNGuess:
                     int usersGuess = Integer.valueOf(txtEnterNumber.getText().toString());
                     String alreadyGuessed = lblGuessHistory.getText().toString();
                     lblGuessHistory.setText(alreadyGuessed + usersGuess + "\n");
                     
-                    if (usersGuess != guessThisNumber)
+                    if(usersGuess != guessThisNumber)
                     {
                         Vibrator vibrate = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
                         vibrate.vibrate(80);
@@ -144,20 +142,20 @@ public class Guessing_Game extends AppCompatActivity implements View.OnClickList
                         lblGuessesLeft.setText("Guesses Left: " + guessCounter);
                         txtEnterNumber.setText("");
                         
-                        if (usersGuess < guessThisNumber)
+                        if(usersGuess < guessThisNumber)
                         {
                             Toast.makeText(this, "Guess Higher!", Toast.LENGTH_LONG).show();
                             
                         }
-                
-                        else if (usersGuess > guessThisNumber)
+                        
+                        else if(usersGuess > guessThisNumber)
                         {
                             Toast.makeText(this, "Guess Lower!", Toast.LENGTH_LONG).show();
                             
                         }
                     }
                     
-                    else if (usersGuess == guessThisNumber)
+                    else if(usersGuess == guessThisNumber)
                     {
                         txtEnterNumber.getBackground().setColorFilter(Color.GREEN, PorterDuff.Mode.SRC_ATOP);
                         txtEnterNumber.setTextColor(Color.GREEN);
@@ -186,18 +184,19 @@ public class Guessing_Game extends AppCompatActivity implements View.OnClickList
                         lblInstructions.setVisibility(View.INVISIBLE);
                         
                     }
-                break;
-            
+                    
+                    break;
+                
             }
         }
-
-        catch (Exception e)
+        
+        catch(Exception e)
         {
             new AlertDialog.Builder(this)
                     .setTitle("Click Error")
                     .setMessage(objClicked.getId() + " Click Error\n" + e.getMessage())
                     .setIcon(android.R.drawable.ic_dialog_alert);
-    
+            
         }
     }
 }
